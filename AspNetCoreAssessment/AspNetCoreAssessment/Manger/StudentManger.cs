@@ -18,17 +18,26 @@ namespace AspNetCoreAssessment.Manger
             
             this.mapper = mapper;
         }
-        public List<StudentVM> SearchStudent(string searchValue)
+        public List<StudentVM> SearchStudent(string SearchVal)
         {
-            if(string.IsNullOrEmpty(searchValue) || searchValue.Equals("All"))
+            if(string.IsNullOrEmpty(SearchVal) || SearchVal.Equals("All"))
             {
              
                 var Allstudents = mapper.Map<List<StudentVM>>(StudentRepo.GetMany(null,student=> student.GenderNavigation, student=> student.StageNavigation).ToList());
                 return Allstudents;
 
             }
-            var Filteredstudents = StudentRepo.GetAll().FullTextSearchQuery(searchValue).ToList();
+            var Filteredstudents = StudentRepo.GetMany(student => student.FirstName.Contains(SearchVal) ||
+            student.LastName.Contains(SearchVal) ||
+            student.Ssn.Contains(SearchVal) ||
+            student.PhoneNumber.Contains(SearchVal) ||
+            student.Birthday.ToString().Contains(SearchVal) ||
+            student.EmailAddress.ToString().Contains(SearchVal)||
+            student.Address.Contains(SearchVal) 
+            
+            ).ToList();
             return mapper.Map<List<StudentVM>>(Filteredstudents);
         }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AspNetCoreAssessment.Manger;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Linq.Dynamic.Core;
 
 namespace AspNetCoreAssessment.Controllers
@@ -26,16 +27,16 @@ namespace AspNetCoreAssessment.Controllers
             var sortColumn = Request.Form[string.Concat("columns[", Request.Form["order[0][column]"], "][name]")];
             var sortColumnDirection = Request.Form["order[0][dir]"];
 
-            var data = studentManger.SearchStudent(searchValue).AsQueryable();
+            var students = studentManger.SearchStudent(searchValue).AsQueryable();
 
             if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
-                data = data.OrderBy(string.Concat(sortColumn, " ", sortColumnDirection));
+                students = students.OrderBy(string.Concat(sortColumn, " ", sortColumnDirection));
 
-            var ProccessedData = data.Skip(skip).Take(pageSize).ToList();
+            var data = students.Skip(skip).Take(pageSize).ToList();
 
-            var recordsTotal = data.Count();
+            var recordsTotal = students.Count();
 
-            var jsonData = new { recordsFiltered = recordsTotal, recordsTotal, ProccessedData };
+            var jsonData = new { recordsFiltered = recordsTotal, recordsTotal, data };
 
             return Ok(jsonData);
         }
