@@ -3,6 +3,13 @@
         "processing": true,
         "serverSide": true,
         "filter": true,
+        "responsive": true,
+        "scrollY": '400px',
+        "scrollCollapse": true,
+        "scrollX": true,
+        "paging": true,
+        "searching": true,
+        "ordering": true,
         "ajax": {
             "url": "/api/StudentList",
             "type": "POST",

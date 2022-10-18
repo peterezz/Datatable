@@ -18,7 +18,7 @@ namespace AspNetCoreAssessment.Manger
             
             this.mapper = mapper;
         }
-        public List<StudentVM> SearchStudent(string SearchVal)
+        public List<StudentVM> SearchStudent(StringValues SearchVal)
         {
             if(string.IsNullOrEmpty(SearchVal) || SearchVal.Equals("All"))
             {
@@ -27,14 +27,18 @@ namespace AspNetCoreAssessment.Manger
                 return Allstudents;
 
             }
-            var Filteredstudents = StudentRepo.GetMany(student => student.FirstName.Contains(SearchVal) ||
-            student.LastName.Contains(SearchVal) ||
-            student.Ssn.Contains(SearchVal) ||
-            student.PhoneNumber.Contains(SearchVal) ||
-            student.Birthday.ToString().Contains(SearchVal) ||
-            student.EmailAddress.ToString().Contains(SearchVal)||
-            student.Address.Contains(SearchVal) 
-            
+            string searchValue = SearchVal.ToString();
+            var Filteredstudents = StudentRepo.GetMany(student => student.FirstName.Contains(searchValue) ||
+            student.LastName.Contains(searchValue)||
+            student.EmailAddress.Contains(searchValue)||
+            student.Address.Contains(searchValue) ||
+            student.PhoneNumber.Contains(searchValue) ||
+            student.Birthday.ToString().Contains(searchValue) ||
+            student.StageNavigation.Name.Contains(searchValue) ||
+            student.Ssn.Contains(searchValue) ,
+            student => student.GenderNavigation, 
+            student => student.StageNavigation
+
             ).ToList();
             return mapper.Map<List<StudentVM>>(Filteredstudents);
         }
