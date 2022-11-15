@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj": {}
+    "E:\\Software comapanies\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj": {}
   },
   "projects": {
-    "E:\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj": {
+    "E:\\Software comapanies\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj",
+        "projectUniqueName": "E:\\Software comapanies\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj",
         "projectName": "AspNetCoreAssessment",
-        "projectPath": "E:\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj",
+        "projectPath": "E:\\Software comapanies\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\AspNetCoreAssessment.csproj",
         "packagesPath": "C:\\Users\\hp 2022\\.nuget\\packages\\",
-        "outputPath": "E:\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\obj\\",
+        "outputPath": "E:\\Software comapanies\\AlBait Software\\Datatable\\AspNetCoreAssessment\\AspNetCoreAssessment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp 2022\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,9 +44,25 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "HttpFileCollectionBaseExtension": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Korzh.EasyQuery.Linq": {
               "target": "Package",
               "version": "[7.2.2, )"
+            },
+            "LazZiya.ImageResize": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNet.WebApi.Core": {
+              "target": "Package",
+              "version": "[5.2.9, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -75,6 +91,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Web.Providers": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             }
           },
           "imports": [

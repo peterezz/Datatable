@@ -10,6 +10,8 @@
         "paging": true,
         "searching": true,
         "ordering": true,
+
+        "info": true,
         "ajax": {
             "url": "/api/StudentList",
             "type": "POST",
@@ -18,7 +20,8 @@
         "columnDefs": [{
             "targets": [0],
             "visible": true,
-            "searchable": false
+            "searchable": false,
+            "autoWidth": true,
         }],
         "columns": [
 
@@ -29,7 +32,8 @@
                 "render": function (data, type, row) {
                     return '<img src=' + row.photo + '  /> '
                 },
-                "orderable": false
+                "orderable": false,
+                "autowidth": true
             },
             {
                 "data": "firstName", "name": "FirstName", "autowidth": true
@@ -39,7 +43,7 @@
             },
             {
               
-                "data": "genderName", "name": "GenderName", "autowidth": true
+                "data": "genderNavigation.name", "name": "GenderNavigation.Name", "autowidth": true
             },
             {
                 "data": "phoneNumber", "name": "PhoneNumber", "autowidth": true
@@ -48,7 +52,7 @@
                 "data": "birthday", "name": "Birthday", "autowidth": true
             },      
             {
-                "data": "stageName", "name": "StageName", "autowidth": true
+                "data": "stageNavigation.name", "name": "StageNavigation.Name", "autowidth": true
             },             
             {
                 "data": "emailAddress", "name": "EmailAddress", "autowidth": true

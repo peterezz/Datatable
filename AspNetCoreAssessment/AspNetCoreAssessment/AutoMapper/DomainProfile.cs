@@ -10,6 +10,7 @@ namespace AspNetCoreAssessment.AutoMapper
         public DomainProfile()
         {
             CreateMap<Student, StudentVM>().ReverseMap();
+         
             CreateMap<Stage, StageVM>().ReverseMap();
             CreateMap<Gender, GenderVM>().ReverseMap();
 

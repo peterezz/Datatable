@@ -7,11 +7,14 @@ namespace AspNetCoreAssessment.Controllers
     public class StudentController : Controller    
     {
         private readonly StudentManger studentManger;
+        private readonly StageManger stageManger;
+        private readonly GenderManger genderManger;
 
-
-        public StudentController(StudentManger studentManger)
+        public StudentController(StudentManger studentManger,StageManger stageManger,GenderManger genderManger)
         {
             this.studentManger = studentManger;
+            this.stageManger = stageManger;
+            this.genderManger = genderManger;
         }
         [HttpGet]
         public IActionResult Index()
@@ -25,7 +28,17 @@ namespace AspNetCoreAssessment.Controllers
            ViewBag.Students = studentManger.SearchStudent("All"); 
             return View(ViewBag.Students);
         }
+        [HttpGet]
+        public IActionResult RegisterStudent()
+        {
+            ViewBag.Gender = genderManger.GetGenders();
+            ViewBag.Stage = stageManger.GetStages();
+            return View();
+        }
 
+
+
+      
 
 
     }

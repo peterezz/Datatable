@@ -18,8 +18,8 @@ namespace AspNetCoreAssessment.Entities
         {
         }
 
-        public virtual DbSet<Gender> Gender { get; set; }
-        public virtual DbSet<Stage> Stage { get; set; }
+      //  public virtual DbSet<Gender> Gender { get; set; }
+       // public virtual DbSet<Stage> Stage { get; set; }
         public virtual DbSet<Student> Student { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

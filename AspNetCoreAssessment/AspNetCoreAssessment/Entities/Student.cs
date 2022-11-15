@@ -5,13 +5,16 @@ using System.Collections.Generic;
 
 namespace AspNetCoreAssessment.Entities
 {
+
     public partial class Student
     {
+
         public int Id { get; set; }
         public string Ssn { get; set; }
         public string Photo { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
         public string PhoneNumber { get; set; }
         public DateTime Birthday { get; set; }
         public int Stage { get; set; }
